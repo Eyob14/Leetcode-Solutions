@@ -5,7 +5,7 @@ class Solution:
         for i, time in enumerate(plantTime):
             growth_plant.append((time, growTime[i]))
             
-        growth_plant.sort(key=lambda e: -e[1])
+        growth_plant.sort(key=lambda t: -t[1])
         cur_time, final_time = 0, 0
         
         for plant, grow in growth_plant:
