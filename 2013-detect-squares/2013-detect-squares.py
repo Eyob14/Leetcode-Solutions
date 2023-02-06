@@ -12,7 +12,7 @@ class DetectSquares:
         result = 0
         x, y = point
         for x0, y0 in self.counter.keys():
-            if abs(x-x0) == abs(y-y0) and abs(x-x0) != 0:
+            if abs(x-x0)-abs(y-y0) == 0 and abs(x-x0) != 0:
                 result += self.counter[(x0,y0)]*self.counter[(x0,y)]*self.counter[(x,y0)]
         return result
         
