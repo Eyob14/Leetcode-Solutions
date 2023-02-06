@@ -23,15 +23,15 @@ class Solution:
             if idx == len(words):
                 return 1
             
-            max_val = 1
+            max_len = 1
             for i in range(idx, len(words)):
                 if i + 1 < len(words) and predecessor(words[idx], words[i + 1]):
-                    max_val = max(max_val, dfs(i + 1) + 1)
-            return max_val
+                    max_len = max(max_len, dfs(i + 1) + 1)
+            return max_len
 
-        res = 1
+        length = 1
         for i in range(len(words)):
-            res = max(res, dfs(i))
+            length = max(length, dfs(i))
     
-        return res
+        return length
         
