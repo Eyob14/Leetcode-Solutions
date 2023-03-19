@@ -1,9 +1,3 @@
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
 class Solution:
     def verticalTraversal(self, root: Optional[TreeNode]) -> List[List[int]]:
         
@@ -19,17 +13,12 @@ class Solution:
         traversal() # calling the function
         storage.sort()
         
-        ans = [[]]
-        last = storage[0][0]
-        
+        container = defaultdict(list)
         for value in storage:
-            if last == value[0]:
-                ans[-1].append(value[2])
-            else:
-                ans.append([value[2]])
-                last = value[0]            
+            container[value[0]].append(value[2])
+        ans = []
+        
+        for value in container.values():
+            ans.append(value)
         
         return ans
-        
-        
-        
